@@ -43,6 +43,7 @@ const {
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
+  SourceEditing,
   SpecialCharacters,
   SpecialCharactersEssentials,
   Style,
@@ -75,6 +76,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       List,
       Paragraph,
       PasteFromOffice,
+      SourceEditing,
       Style,
       Table,
       TableToolbar,
@@ -94,7 +96,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       '|',
       'bulletedList', 'numberedList',
       '|',
-      'style'
+      'style',
+      '|',
+      'sourceEditing'
     ],
     heading: {
       options: [
@@ -184,6 +188,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       MediaEmbed,
       Paragraph,
       PasteFromOffice,
+      SourceEditing,
       Style,
       Table,
       TableToolbar,
@@ -203,7 +208,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'bulletedList', 'numberedList', 'outdent', 'indent',
         '|',
-        'style'
+        'style',
+        '|',
+        'sourceEditing'
     ],
     heading: {
       options: [
@@ -313,6 +320,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       Paragraph,
       PasteFromOffice,
       RemoveFormat,
+      SourceEditing,
       SpecialCharacters,
       SpecialCharactersEssentials,
       Style,
@@ -345,6 +353,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent',
         '|',
         'style',
+        '|',
+        'sourceEditing',
       ],
       shouldNotGroupWhenFull: true
     },
