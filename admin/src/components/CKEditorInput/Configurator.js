@@ -44,6 +44,7 @@ const {
   RemoveFormat,
   SpecialCharacters,
   SpecialCharactersEssentials,
+  Style,
   Table,
   TableToolbar,
   TableProperties,
@@ -72,6 +73,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       List,
       Paragraph,
       PasteFromOffice,
+      Style,
       Table,
       TableToolbar,
       TableColumnResize,
@@ -88,7 +90,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       '|',
       'link', 'strapiMediaLib', 'insertTable',
       '|',
-      'bulletedList', 'numberedList'
+      'bulletedList', 'numberedList',
+      '|',
+      'style'
     ],
     heading: {
       options: [
@@ -129,6 +133,20 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           }
         }
       }
+    },
+    style: {
+      definitions: [
+        {
+          name: 'Article category',
+          element: 'h3',
+          classes: [ 'category' ]
+        },
+        {
+          name: 'Info box',
+          element: 'p',
+          classes: [ 'info-box' ]
+        },
+      ]
     }
   },
 
@@ -153,6 +171,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       MediaEmbed,
       Paragraph,
       PasteFromOffice,
+      Style,
       Table,
       TableToolbar,
       TableColumnResize,
@@ -169,7 +188,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'link', 'strapiMediaLib', 'mediaEmbed', 'blockQuote', 'insertTable', 'codeBlock',
         '|',
-        'bulletedList', 'numberedList', 'outdent', 'indent'
+        'bulletedList', 'numberedList', 'outdent', 'indent',
+        '|',
+        'style'
     ],
     heading: {
       options: [
@@ -212,6 +233,20 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           }
         }
       }
+    },
+    style: {
+      definitions: [
+        {
+          name: 'Article category',
+          element: 'h3',
+          classes: [ 'category' ]
+        },
+        {
+          name: 'Info box',
+          element: 'p',
+          classes: [ 'info-box' ]
+        },
+      ]
     }
   },
 
@@ -256,6 +291,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       RemoveFormat,
       SpecialCharacters,
       SpecialCharactersEssentials,
+      Style,
       Table,
       TableToolbar,
       TableProperties,
@@ -283,6 +319,8 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         'alignment',
         '|',
         'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent',
+        '|',
+        'style',
       ],
       shouldNotGroupWhenFull: true
     },
@@ -394,6 +432,20 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           }
         }
       }
+    },
+    style: {
+      definitions: [
+        {
+          name: 'Article category',
+          element: 'h3',
+          classes: [ 'category' ]
+        },
+        {
+          name: 'Info box',
+          element: 'p',
+          classes: [ 'info-box' ]
+        },
+      ]
     }
   }
 };
