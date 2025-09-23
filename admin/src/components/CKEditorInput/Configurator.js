@@ -21,6 +21,7 @@ const {
   FontColor,
   FontBackgroundColor,
   FindAndReplace,
+  GeneralHtmlSupport,
   Heading,
   HorizontalLine,
   HtmlEmbed,
@@ -62,6 +63,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       Bold,
       Italic,
       Essentials,
+      GeneralHtmlSupport,
       Heading,
       Image,
       ImageCaption,
@@ -147,6 +149,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           classes: [ 'info-box' ]
         },
       ]
+    },
+    htmlSupport: {
+      allow: [
+        {
+          name: /.*/,
+          attributes: true,
+          classes: true,
+          styles: true
+        }
+      ]
     }
   },
 
@@ -158,6 +170,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       BlockQuote,
       CodeBlock,
       Essentials,
+      GeneralHtmlSupport,
       Heading,
       Image,
       ImageCaption,
@@ -247,6 +260,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           classes: [ 'info-box' ]
         },
       ]
+    },
+    htmlSupport: {
+      allow: [
+        {
+          name: /.*/,
+          attributes: true,
+          classes: true,
+          styles: true
+        }
+      ]
     }
   },
 
@@ -269,6 +292,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       FontColor,
       FontBackgroundColor,
       FindAndReplace,
+      GeneralHtmlSupport,
       Heading,
       HorizontalLine,
       HtmlEmbed,
@@ -445,6 +469,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           element: 'p',
           classes: [ 'info-box' ]
         },
+      ]
+    },
+    htmlSupport: {
+      allow: [
+        {
+          name: /.*/,
+          attributes: true,
+          classes: true,
+          styles: true
+        }
       ]
     }
   }
