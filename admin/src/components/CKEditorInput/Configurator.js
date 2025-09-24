@@ -143,14 +143,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     style: {
       definitions: [
         {
-          name: 'Article category',
-          element: 'h3',
-          classes: [ 'category' ]
-        },
-        {
-          name: 'Info box',
+          name: 'CTA',
           element: 'p',
-          classes: [ 'info-box' ]
+          classes: [ 'btn', 'btn-primary', 'text-white' ]
         },
       ]
     },
@@ -257,14 +252,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     style: {
       definitions: [
         {
-          name: 'Article category',
-          element: 'h3',
-          classes: [ 'category' ]
-        },
-        {
-          name: 'Info box',
+          name: 'CTA',
           element: 'p',
-          classes: [ 'info-box' ]
+          classes: [ 'btn', 'btn-primary', 'text-white' ]
         },
       ]
     },
@@ -470,14 +460,9 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     style: {
       definitions: [
         {
-          name: 'Article category',
-          element: 'h3',
-          classes: [ 'category' ]
-        },
-        {
-          name: 'Info box',
+          name: 'CTA',
           element: 'p',
-          classes: [ 'info-box' ]
+          classes: [ 'btn', 'btn-primary', 'text-white' ]
         },
       ]
     },
