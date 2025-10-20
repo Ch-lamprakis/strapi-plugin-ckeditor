@@ -85,49 +85,31 @@ const CKEditorInput = ( props ) => {
             const mediaLibPlugin = editor.plugins.get( 'strapiMediaLib' );
             mediaLibPlugin.connect( handleToggleMediaLib );
 
+            // Helper function to convert plain text to HTML while preserving line breaks
+            const plainTextToHtml = ( plainText ) => {
+              const lines = plainText.split( /\r?\n/ );
+              return lines.map( line => line.trim() === '' ? '<p>&nbsp;</p>' : `<p>${line}</p>` ).join( '' );
+            };
 
-            editor.plugins.get( 'ClipboardPipeline' ).on( 'clipboardInput', ( evt, data ) => {
-              const plainText = data.dataTransfer.getData( 'text/plain' );
-              if ( plainText ) {
-                console.log( 'CKEditor: Forcing plain text paste, stripping formatting from:', plainText.substring( 0, 100 ) + '...' );
-                
-                // keep only plain text
-                data.dataTransfer.clearData();
-                data.dataTransfer.setData( 'text/plain', plainText );
-                
-                data.dataTransfer.setData( 'text/html', '' );
-              }
-            }, { priority: 'highest' } );
-            
-            editor.plugins.get( 'ClipboardPipeline' ).on( 'inputTransformation', ( evt, data ) => {
+            // Override clipboard to force plain text pasting
+            editor.editing.view.document.on( 'clipboardInput', ( evt, data ) => {
               const plainText = data.dataTransfer.getData( 'text/plain' );
               
               if ( plainText ) {
-                evt.stop();
+                // Convert plain text to HTML
+                const htmlContent = plainTextToHtml( plainText );
                 
-                const lines = plainText.split( /\r?\n/ );
-                let htmlContent = '';
+                // Create view fragment from HTML
+                const viewFragment = editor.data.processor.toView( htmlContent );
+                const modelFragment = editor.data.toModel( viewFragment );
                 
-                lines.forEach( ( line, index ) => {
-                  if ( index > 0 ) {
-                    htmlContent += '<br>';
-                  }
-                  
-                  // Escape HTML entities to prevent any HTML injection
-                  const escapedLine = line
-                    .replace( /&/g, '&amp;' )
-                    .replace( /</g, '&lt;' )
-                    .replace( />/g, '&gt;' )
-                    .replace( /"/g, '&quot;' )
-                    .replace( /'/g, '&#39;' );
-                  
-                  htmlContent += escapedLine;
+                // Insert the content
+                editor.model.change( writer => {
+                  editor.model.insertContent( modelFragment );
                 } );
-                
-                const finalContent = htmlContent.trim() || '&nbsp;';
-                const wrappedContent = finalContent.includes( '<br>' ) ? finalContent : `<p>${finalContent}</p>`;
-                
-                data.content = editor.data.htmlProcessor.toView( wrappedContent );
+
+                // Prevent default paste behavior
+                evt.stop();
               }
             }, { priority: 'high' } );
 
