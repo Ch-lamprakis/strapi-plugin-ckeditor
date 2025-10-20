@@ -85,38 +85,30 @@ const CKEditorInput = ( props ) => {
             const mediaLibPlugin = editor.plugins.get( 'strapiMediaLib' );
             mediaLibPlugin.connect( handleToggleMediaLib );
 
-            // Force plain text pasting behavior - overrides all formatting from clipboard
-            // This implementation intercepts paste operations and ensures only plain text is processed
-            
-            // First, intercept at the clipboard input level to strip all formatting
+
             editor.plugins.get( 'ClipboardPipeline' ).on( 'clipboardInput', ( evt, data ) => {
               const plainText = data.dataTransfer.getData( 'text/plain' );
               if ( plainText ) {
                 console.log( 'CKEditor: Forcing plain text paste, stripping formatting from:', plainText.substring( 0, 100 ) + '...' );
                 
-                // Clear all formatted data (HTML, RTF, etc.) and keep only plain text
+                // keep only plain text
                 data.dataTransfer.clearData();
                 data.dataTransfer.setData( 'text/plain', plainText );
                 
-                // Remove any HTML content that might bypass plain text detection
                 data.dataTransfer.setData( 'text/html', '' );
               }
             }, { priority: 'highest' } );
             
-            // Second, process the input transformation to convert plain text to editor format
             editor.plugins.get( 'ClipboardPipeline' ).on( 'inputTransformation', ( evt, data ) => {
               const plainText = data.dataTransfer.getData( 'text/plain' );
               
               if ( plainText ) {
-                // Stop the default processing to prevent any formatting
                 evt.stop();
                 
-                // Process plain text: preserve line breaks, escape HTML entities
                 const lines = plainText.split( /\r?\n/ );
                 let htmlContent = '';
                 
                 lines.forEach( ( line, index ) => {
-                  // Add line breaks between lines (except for the first line)
                   if ( index > 0 ) {
                     htmlContent += '<br>';
                   }
@@ -132,11 +124,9 @@ const CKEditorInput = ( props ) => {
                   htmlContent += escapedLine;
                 } );
                 
-                // Wrap in paragraph if empty or set the processed content
                 const finalContent = htmlContent.trim() || '&nbsp;';
                 const wrappedContent = finalContent.includes( '<br>' ) ? finalContent : `<p>${finalContent}</p>`;
                 
-                // Convert to editor's view format
                 data.content = editor.data.htmlProcessor.toView( wrappedContent );
               }
             }, { priority: 'high' } );
