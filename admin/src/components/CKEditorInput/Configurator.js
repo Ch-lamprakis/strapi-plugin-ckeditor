@@ -268,7 +268,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           attributes: true,
           classes: true,
           styles: true
-        }
+        },
       ]
     }
   },
@@ -476,7 +476,6 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           name: /.*/,
           attributes: true,
           classes: true,
-          styles: true
         }
       ]
     }

@@ -85,6 +85,14 @@ const CKEditorInput = ( props ) => {
             const mediaLibPlugin = editor.plugins.get( 'strapiMediaLib' );
             mediaLibPlugin.connect( handleToggleMediaLib );
 
+            // Override paste behavior to force plain text pasting
+            editor.editing.view.document.on( 'paste', ( evt, data ) => {
+              // Force plain text paste by clearing the dataTransfer HTML content
+              if ( data.dataTransfer.getData( 'text/plain' ) ) {
+                data.dataTransfer.setData( 'text/html', '' );
+              }
+            }, { priority: 'high' } );
+
             setEditorInstance( editor );
           }}
           onChange={ ( event, editor ) => {
