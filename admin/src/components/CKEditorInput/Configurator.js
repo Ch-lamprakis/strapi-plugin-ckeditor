@@ -142,6 +142,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         }
       }
     },
+    mediaEmbed: {
+      previewsInData: true,
+      extraProviders: [
+        {
+          name: 'youtube',
+          url: /^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/,
+          html: match => `<iframe src="https://www.youtube.com/embed/${match[1]}" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>`
+        }
+      ]
+    },
     style: {
       definitions: [
         {
@@ -251,6 +261,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           }
         }
       }
+    },
+    mediaEmbed: {
+      previewsInData: true,
+      extraProviders: [
+        {
+          name: 'youtube',
+          url: /^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/,
+          html: match => `<iframe src="https://www.youtube.com/embed/${match[1]}" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>`
+        }
+      ]
     },
     style: {
       definitions: [
@@ -460,6 +480,16 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           }
         }
       }
+    },
+    mediaEmbed: {
+      previewsInData: true,
+      extraProviders: [
+        {
+          name: 'youtube',
+          url: /^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+)/,
+          html: match => `<iframe src="https://www.youtube.com/embed/${match[1]}" referrerpolicy="strict-origin-when-cross-origin" frameborder="0" allowfullscreen></iframe>`
+        }
+      ]
     },
     style: {
       definitions: [
