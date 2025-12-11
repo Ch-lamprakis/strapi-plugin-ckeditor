@@ -1,6 +1,6 @@
 {
   "name": "@ch-lamprakis/strapi-plugin-ckeditor",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "CKEditor 5 - Enhanced Integration for Strapi",
   "strapi": {
     "name": "ckeditor",
