@@ -76,6 +76,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       Indent,
       Link,
       List,
+      MediaEmbed,
       Paragraph,
       PasteFromOffice,
       SourceEditing,
@@ -94,7 +95,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       '|',
       'bold', 'italic',
       '|',
-      'link', 'strapiMediaLib', 'insertTable',
+      'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable',
       '|',
       'bulletedList', 'numberedList',
       '|',
@@ -144,7 +145,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     },
     mediaEmbed: {
       previewsInData: true,
-      extraProviders: [
+      providers: [
         {
           name: 'youtube',
           url: [
@@ -156,7 +157,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           html: match => {
             const id = match[1];
             return (
-              '<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.24%;">' +
+              '<div style="position: relative; height: 0; padding-bottom: 56.25%;">' +
                 `<iframe src="https://www.youtube.com/embed/${id}" ` +
                 'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
                 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ' +
@@ -280,7 +281,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     },
     mediaEmbed: {
       previewsInData: true,
-      extraProviders: [
+      providers: [
         {
           name: 'youtube',
           url: [
@@ -292,7 +293,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           html: match => {
             const id = match[1];
             return (
-              '<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.24%;">' +
+              '<div style="position: relative; height: 0; padding-bottom: 56.25%;">' +
                 `<iframe src="https://www.youtube.com/embed/${id}" ` +
                 'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
                 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ' +
@@ -515,7 +516,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     },
     mediaEmbed: {
       previewsInData: true,
-      extraProviders: [
+      providers: [
         {
           name: 'youtube',
           url: [
@@ -527,7 +528,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           html: match => {
             const id = match[1];
             return (
-              '<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.24%;">' +
+              '<div style="position: relative; height: 0; padding-bottom: 56.25%;">' +
                 `<iframe src="https://www.youtube.com/embed/${id}" ` +
                 'style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" ' +
                 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ' +
@@ -554,6 +555,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
           name: /.*/,
           attributes: true,
           classes: true,
+          styles: true
         }
       ]
     }
