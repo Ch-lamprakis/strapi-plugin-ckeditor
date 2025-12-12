@@ -148,10 +148,10 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         {
           name: 'youtube',
           url: [
-            /^(?:m\.)?youtube\.com\/watch\?v=([\w-]+)/,
-            /^(?:m\.)?youtube\.com\/v\/([\w-]+)/,
-            /^youtube\.com\/embed\/([\w-]+)/,
-            /^youtu\.be\/([\w-]+)/
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/.*[?&]v=([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/v\/([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/embed\/([\w-]+)/,
+            /^(?:https?:\/\/)?youtu\.be\/([\w-]+)/
           ],
           html: match => {
             const id = match[1];
@@ -284,10 +284,10 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         {
           name: 'youtube',
           url: [
-            /^(?:m\.)?youtube\.com\/watch\?v=([\w-]+)/,
-            /^(?:m\.)?youtube\.com\/v\/([\w-]+)/,
-            /^youtube\.com\/embed\/([\w-]+)/,
-            /^youtu\.be\/([\w-]+)/
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/.*[?&]v=([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/v\/([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/embed\/([\w-]+)/,
+            /^(?:https?:\/\/)?youtu\.be\/([\w-]+)/
           ],
           html: match => {
             const id = match[1];
@@ -519,10 +519,10 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         {
           name: 'youtube',
           url: [
-            /^(?:m\.)?youtube\.com\/watch\?v=([\w-]+)/,
-            /^(?:m\.)?youtube\.com\/v\/([\w-]+)/,
-            /^youtube\.com\/embed\/([\w-]+)/,
-            /^youtu\.be\/([\w-]+)/
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/.*[?&]v=([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/v\/([\w-]+)/,
+            /^(?:https?:\/\/)?(?:www\.|m\.)?youtube\.com\/embed\/([\w-]+)/,
+            /^(?:https?:\/\/)?youtu\.be\/([\w-]+)/
           ],
           html: match => {
             const id = match[1];
