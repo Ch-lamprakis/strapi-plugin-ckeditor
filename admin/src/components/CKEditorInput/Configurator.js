@@ -442,7 +442,13 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         name: 'resizeImage:75',
         value: '75',
         icon: 'large'
-      } ],
+      },
+      {
+        name: 'resizeImage:525',
+        label: '525 px',
+        value: '525px'
+      }
+    ],
       toolbar: [
         'imageStyle:inline', 'imageStyle:block', 'imageStyle:side',
         '|',
@@ -450,7 +456,7 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
         '|',
         'linkImage',
         '|',
-        'resizeImage:25', 'resizeImage:50', 'resizeImage:75', 'resizeImage:original'
+        'resizeImage:25', 'resizeImage:50', 'resizeImage:75', 'resizeImage:525', 'resizeImage:original'
       ]
     },
     table: {
