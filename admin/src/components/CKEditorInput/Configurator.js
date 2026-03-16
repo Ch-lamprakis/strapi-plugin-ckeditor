@@ -422,31 +422,33 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       }
     },
     image: {
-      resizeUnit: "%",
-      resizeOptions: [ {
+      resizeUnit: "px",
+      resizeOptions: [
+      {
         name: 'resizeImage:original',
         value: null,
         icon: 'original'
       },
       {
         name: 'resizeImage:25',
-        value: '25',
+        value: '200',
         icon: 'small'
       },
       {
         name: 'resizeImage:50',
-        value: '50',
+        value: '350',
         icon: 'medium'
       },
       {
         name: 'resizeImage:75',
-        value: '75',
+        value: '500',
         icon: 'large'
       },
       {
         name: 'resizeImage:525',
-        label: '525 px',
-        value: '525px'
+        label: '525px',
+        value: '525',
+        icon: 'large'
       }
     ],
       toolbar: [
